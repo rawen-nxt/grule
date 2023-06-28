@@ -4,11 +4,10 @@ import useRulesStore from '@/stores/Rules';
 import {storeToRefs} from 'pinia';
 import GRuleHeader from '@/components/GRule/GRuleHeader.vue';
 import GRuleList from '@/components/GRule/GRuleList.vue'
+import GRuleEditor from '@/components/GRule/GRuleEditor.vue';
 
 const rulesStore = useRulesStore()
 const {ruleGroupName, rules, activeIndex} = storeToRefs(rulesStore)
-
-
 const mode = ref('edit')
 </script>
 
@@ -44,7 +43,7 @@ const mode = ref('edit')
       </div>
     </div>
 
-    <div v-if="rules.length" class="flex gap-8 flex-col">
+    <div v-if="rules.length" class="flex gap-8">
       <GRuleList
           class="w-1/5"
           :rules="rules"
@@ -52,7 +51,8 @@ const mode = ref('edit')
           @set-active="rulesStore.setActiveIndex($event)"
           @delete-rule="rulesStore.deleteRule($event)"
       ></GRuleList>
-
+      <GRuleEditor
+          v-show="mode === 'edit'"></GRuleEditor>
     </div>
 
     <div v-else class="text-center">NO RULES</div>
