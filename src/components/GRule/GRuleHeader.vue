@@ -10,7 +10,7 @@ function addRule() {
 <template>
   <header class="header">
     <div class="container flex justify-between align-center py-4 mx-auto">
-      <h1 class="text-2xl text-white align-middle">Add/Edit Rules</h1>
+      <h1 class="h1">Add/Edit Rules</h1>
       <div class="btn-block flex gap-2">
         <button
             class="btn light"
