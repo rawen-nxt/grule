@@ -1,11 +1,9 @@
 <script setup>
-
+import GRule from '@/components/GRule/GRule.vue';
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold underline">
-    GRule
-  </h1>
+<GRule/>
 </template>
 
 <style scoped>
