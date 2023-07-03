@@ -11,12 +11,12 @@ export const operations = {
   },
   groupLogic: {
     or: [
-      { grouping: true, str: '<OR>' },
-      { grouping: true, str: '>OR<' }
+      { grouping: true, str: '{ OR }' },
+      { grouping: false, str: '} OR {' }
     ],
     and: [
-      { grouping: true, str: '<AND>' },
-      { grouping: false, str: '>AND<' }
+      { grouping: true, str: '{ AND }' },
+      { grouping: false, str: '} AND {' }
     ]
   },
   compare: {
