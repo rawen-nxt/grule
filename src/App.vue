@@ -1,11 +1,9 @@
 <script setup>
-import GRule from '@/components/GRule/GRule.vue';
+import GRule from '@/components/GRule/GRule.vue'
 </script>
 
 <template>
-<GRule/>
+  <GRule />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
