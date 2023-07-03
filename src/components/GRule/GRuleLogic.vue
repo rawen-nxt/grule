@@ -11,6 +11,10 @@ const props = defineProps({
   expressionId: {
     type: String,
     required: true
+  },
+  deep: {
+    type: Number,
+    required: true
   }
 })
 
@@ -29,7 +33,7 @@ function updateOperator({ operator, index, grouping }) {
 <template>
   <template v-if="['and', 'or'].includes(expression.operator)">
     <div
-      class="parent flex p-4 flex-col items-center items-stretch rounded-md relative"
+      class="parent flex p-4 flex-col items-stretch rounded-md relative"
       :class="{
         'bg-green-100 shadow-md': expression.operator === 'and',
         'bg-yellow-100 shadow-md': expression.operator === 'or'
@@ -44,12 +48,12 @@ function updateOperator({ operator, index, grouping }) {
           @update-operator="updateOperator($event)"
         />
 
-        <GRuleLogic :expression-id="operand" />
+        <GRuleLogic :expression-id="operand" :deep="deep + 1" />
       </template>
     </div>
   </template>
   <template v-else>
-    <GRuleCompare :expression-id="props.expressionId" :hideClose="false" />
+    <GRuleCompare :expression-id="props.expressionId" :hideClose="!deep" />
   </template>
   <div v-if="isRoot" class="flex justify-center">
     <GRuleOperator :type="'logic'" @add-expression="addExpression" operator="" />

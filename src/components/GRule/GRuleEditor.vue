@@ -26,7 +26,7 @@ const { rule } = storeToRefs(rulesStore)
     </div>
     <div class="row">
       <div class="title">Conditions</div>
-      <GRuleLogic :expression-id="rule.rootId" :isRoot="true" :key="rule.rootId" />
+      <GRuleLogic :expression-id="rule.rootId" :isRoot="true" :key="rule.rootId" :deep="0"/>
     </div>
     <div class="row">
       <GRuleActions />

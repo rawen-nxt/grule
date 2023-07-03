@@ -8,10 +8,7 @@ const props = defineProps({
     type: String,
     required: true
   },
-  index: {
-    type: Number,
-    required: true
-  },
+
   hideClose: {
     type: Boolean,
     default: false

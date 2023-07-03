@@ -15,7 +15,7 @@ const props = defineProps({
   },
   index: {
     type: Number,
-    required: true
+    default: 0
   },
   type: {
     type: String,
@@ -37,12 +37,13 @@ const variants = computed(() => {
 })
 
 function changeOperator(operator, index, grouping) {
+  showVariants.value = false
   if (props.operator) {
     emit('updateOperator', { operator, index, grouping })
   } else {
     emit('addExpression', operator)
   }
-  showVariants.value = false
+
 }
 </script>
 
